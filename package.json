@@ -1,11 +1,49 @@
 {
+  "name": "@flarum/docs",
   "private": true,
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+  "description": "The official Flarum documentation site. Flarum is a powerful, extensible and open-source forum framework built for the modern web.",
+  "version": "0.1.0-alpha.1",
+  "author": "Flarum Team",
+  "dependencies": {
+    "@fontsource/mukta": "^4.4.5",
+    "@material-ui/styles": "^4.11.4",
+    "gatsby": "^3.6.2",
+    "gatsby-plugin-gatsby-cloud": "^2.6.1",
+    "gatsby-plugin-image": "^1.6.0",
+    "gatsby-plugin-less": "^5.7.1",
+    "gatsby-plugin-manifest": "^3.6.0",
+    "gatsby-plugin-offline": "^4.6.0",
+    "gatsby-plugin-react-head": "https://github.com/davwheat/gatsby-plugin-react-head",
+    "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-sharp": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-head": "^3.4.0"
   },
   "devDependencies": {
-    "vuepress": "^1.7.1",
-    "vuepress-plugin-container": "^2.1.4"
+    "prettier": "2.2.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flarum/docs"
+  },
+  "bugs": {
+    "url": "https://github.com/flarum/docs/issues"
   }
 }

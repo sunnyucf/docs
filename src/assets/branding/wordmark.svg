@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 335 73">
+  <title>Flarum logo with text "Flarum" next to it</title>
+  <defs>
+    <linearGradient id="a" x1="50%" x2="50%" y1="16.58%" y2="100%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+    <linearGradient id="b" x1="50%" x2="50%" y1="16.58%" y2="100%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+    <linearGradient id="c" x1="50%" x2="50%" y1="16.58%" y2="100%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+    <linearGradient id="d" x1="50%" x2="50%" y1="16.58%" y2="100%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+    <linearGradient id="e" x1="50%" x2="50%" y1="16.58%" y2="100%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+    <linearGradient id="f" x1="49.97%" x2="49.97%" y1="96.22%" y2="-2.89%">
+      <stop offset="0%" stop-color="#D22929" />
+      <stop offset="100%" stop-color="#B71717" />
+    </linearGradient>
+    <linearGradient id="g" x1="50%" x2="50%" y1=".42%" y2="100.3%">
+      <stop offset="0%" stop-color="#E7762E" />
+      <stop offset="100%" stop-color="#E7562E" />
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="url(#a)"
+      d="M32.73 13.28V.04h-32v72.59h13.24V45.34h15.57V32.1H13.97V13.28zM52.33 59.39V.04H39.1v72.59H71.09V59.39z"
+      transform="translate(76.49)" />
+    <path fill="url(#b)" fill-rule="nonzero"
+      d="M162.6 22.69A22.65 22.65 0 00140.4.05V0h-6.23v.04h-10.66v72.6h13.22v-27.3h3.19l9.38 27.3h13.23l-11.4-30.29A22.63 22.63 0 00162.6 22.7zm-23.2 9.4h-2.65V13.28H140.43a9.41 9.41 0 11-1.04 18.8z"
+      transform="translate(76.49)" />
+    <path fill="url(#c)" fill-rule="nonzero"
+      d="M107.1.04H87.5l-13.22 72.6H87.5l2.58-14.06h14.46l1.7 9.3.86 4.74h13.23L107.1.04zm-14.62 45.3l3.4-18.7 1.41-7.75 1.42 7.76 3.4 18.69h-9.63z"
+      transform="translate(76.49)" />
+    <path fill="url(#d)" fill-rule="nonzero"
+      d="M187.71.04v55a4.35 4.35 0 01-8.7 0v-55h-13.23v55a17.59 17.59 0 1035.18 0v-55H187.7z"
+      transform="translate(76.49)" />
+    <path fill="url(#e)" fill-rule="nonzero"
+      d="M241.18.04l-8.75 30.75L223.68.04h-16.36v72.59h13.24V31.85L228 58.58h8.86l7.44-26.73v40.78h13.24V.04z"
+      transform="translate(76.49)" />
+    <g>
+      <path fill="url(#f)" d="M35.3 49.54v23.1L5.56 53.17l-1.2-.79-2.59-1.7c-.45-.3-.84-.68-1.13-1.14l34.66-.01z" />
+      <path fill="url(#g)"
+        d="M1.47.04C.66.04 0 .7 0 1.5v45.9c0 .76.22 1.5.63 2.13.29.46.67.85 1.13 1.15l2.6 1.7 1.19.78S.6 49.53 6.6 49.53h55.17V.03H1.47z" />
+    </g>
+  </g>
+</svg>
