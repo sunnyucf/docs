@@ -7,26 +7,33 @@
   "dependencies": {
     "@fontsource/mukta": "^4.4.5",
     "@material-ui/styles": "^4.11.4",
-    "gatsby": "^3.6.2",
-    "gatsby-plugin-gatsby-cloud": "^2.6.1",
-    "gatsby-plugin-image": "^1.6.0",
+    "deepmerge": "^4.2.2",
+    "gatsby": "^3.7.2",
+    "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-less": "^5.7.1",
-    "gatsby-plugin-manifest": "^3.6.0",
-    "gatsby-plugin-offline": "^4.6.0",
+    "gatsby-plugin-manifest": "^3.7.1",
+    "gatsby-plugin-offline": "^4.7.1",
+    "gatsby-plugin-preact": "^5.7.1",
     "gatsby-plugin-react-head": "https://github.com/davwheat/gatsby-plugin-react-head",
-    "gatsby-plugin-sharp": "^3.6.0",
-    "gatsby-source-filesystem": "^3.6.0",
-    "gatsby-transformer-sharp": "^3.6.0",
+    "gatsby-plugin-sharp": "^3.7.1",
+    "gatsby-source-filesystem": "^3.7.1",
+    "gatsby-transformer-sharp": "^3.7.1",
     "normalize.css": "^8.0.1",
+    "preact": "^10.5.13",
+    "preact-render-to-string": "^5.1.19",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-head": "^3.4.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-head": "^3.4.0",
+    "recoil": "^0.3.1",
+    "recoil-persistence": "^0.2.5"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "jsonc-loader": "^0.1.1",
+    "prettier": "^2.3.1"
   },
   "keywords": [
+    "flarum",
     "gatsby"
   ],
   "license": "MIT",

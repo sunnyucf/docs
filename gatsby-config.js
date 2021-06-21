@@ -1,5 +1,7 @@
 const packageJson = require('./package.json');
 
+const prodPlugins = process.env.NODE_ENV === 'production' ? [`gatsby-plugin-preact`] : [];
+
 module.exports = {
   flags: {
     FAST_DEV: true,
@@ -34,5 +36,6 @@ module.exports = {
         icon: `src/assets/branding/icon.svg`,
       },
     },
+    ...prodPlugins,
   ],
 };

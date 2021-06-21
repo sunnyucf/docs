@@ -1,0 +1,1 @@
+export { LocaleAtom } from './LocaleAtom';

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "englishLanguageName": "English",
+    "nativeLanguageName": "English",
+    "languageCode": "en"
+  },
+  "translations": {
+    "navBar": {
+      "search": {
+        "placeholder": "Search Flarum Docs"
+      },
+      "items": {
+        "guide": "Guide",
+        "extend": "Extend",
+        "apiReference": "API Reference"
+      },
+      "groups": {
+        "flarum": {
+          "groupTitle": "Flarum",
+          "items": {
+            "site": "Home",
+            "discuss": "Community",
+            "github": "GitHub"
+          }
+        }
+      }
+    }
+  }
+}

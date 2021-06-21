@@ -12,12 +12,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 interface ISEOProps {
   description?: string;
-  lang?: string;
   meta?: { name: string; content: string }[];
   title: string;
 }
 
-function SEO({ description, lang = 'en-US', meta, title }: ISEOProps) {
+function SEO({ description, meta, title }: ISEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,9 +31,9 @@ function SEO({ description, lang = 'en-US', meta, title }: ISEOProps) {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description || '';
 
-  const pageTitle = title ? `${title} | Flarum Docs` : site.siteMetadata?.title;
+  const pageTitle = (title ? `${title} | Flarum Docs` : site.siteMetadata?.title) || '';
 
   return (
     <>
@@ -51,7 +50,7 @@ function SEO({ description, lang = 'en-US', meta, title }: ISEOProps) {
       {/* Social cards */}
       <Meta name="og:type" content="website" />
       <Meta name="twitter:card" content="summary" />
-      {/* {site.siteMetadata?.author && <Meta name="twitter:author" content={site.siteMetadata?.author} />} */}
+      {site.siteMetadata?.author && <Meta name="twitter:author" content={site.siteMetadata?.author} />}
 
       {/* Extra meta tags */}
       {meta?.map((tag, i) => (
