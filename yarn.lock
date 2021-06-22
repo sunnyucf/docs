@@ -10654,10 +10654,10 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-recoil-persistence@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/recoil-persistence/-/recoil-persistence-0.2.5.tgz#67f5f2489d7c3c3ff218a3adc9ab40298740e14a"
-  integrity sha512-VrBerI/Ngoy4Z4qIxZTjtp2wdubHfH5gQCmOycJYyxd1G8DztMyP9olX4FgOHdJjn8MCQReps+ShIVbKATni2Q==
+recoil-persistence@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/recoil-persistence/-/recoil-persistence-0.2.6.tgz#58ed04b3ac17d6f329cafebaf821c2b21bca4fe7"
+  integrity sha512-kYMr/pFNflzaOIwHdQ7NAWNvmfUjFCCEuHSaC9Z6hg5NVzZMnJHZSQ+F1QBdOa4rA1xz80jyw9QTCABunpJUbw==
   optionalDependencies:
     "@react-native-async-storage/async-storage" "^1.15.0"
 
