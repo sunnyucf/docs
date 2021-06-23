@@ -11,4 +11,5 @@ import 'normalize.css';
 import './src/css/baseline.less';
 
 // Import fonts
-import '@fontsource/mukta';
+import '@fontsource/mukta/400.css';
+import '@fontsource/mukta/700.css';
