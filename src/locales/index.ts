@@ -4,6 +4,7 @@ import Locale from './Locale';
 // Locale imports
 import LangEn from './en.json';
 
+export type LocaleClass = Locale;
 export type LocaleData = typeof BaseLanguage;
 
 const BaseLanguage = LangEn;
@@ -21,9 +22,9 @@ const localeList = [createLocale(LangEn)];
 // Below is ALL AUTOMATED
 // -------
 
-type AvailableLocalesType = (LocaleData['metadata'] & { getLocale(): Locale })[];
+type AvailableLocalesType = (LocaleData['metadata'] & { getLocale(): LocaleClass })[];
 
-export const LocalesByLangCode: Record<string, Locale> = {};
+export const LocalesByLangCode: Record<string, LocaleClass> = {};
 export const AvailableLocales: AvailableLocalesType = [];
 
 // Populate data
@@ -33,7 +34,7 @@ localeList.forEach((locale) => {
   AvailableLocales.push({
     ...locale.metadata,
 
-    getLocale() {
+    getLocale(): LocaleClass {
       return LocalesByLangCode[locale.metadata.languageCode];
     },
   });

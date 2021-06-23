@@ -22,6 +22,9 @@
             "discuss": "Community",
             "github": "GitHub"
           }
+        },
+        "languages": {
+          "groupTitle": "Languages"
         }
       }
     }
