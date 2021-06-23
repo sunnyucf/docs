@@ -12,4 +12,4 @@ import './src/css/baseline.less';
 
 // Import fonts
 import '@fontsource/mukta/400.css';
-import '@fontsource/mukta/700.css';
+import '@fontsource/mukta/600.css';
