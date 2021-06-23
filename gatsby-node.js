@@ -36,3 +36,65 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
     },
   });
 };
+
+/**
+ * Create docs pages.
+ */
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createRedirect } = actions;
+
+  const result = await graphql(`
+    {
+      allMdx {
+        nodes {
+          id
+          frontmatter {
+            title
+            path
+            redirect_from
+            locale
+          }
+          tableOfContents(maxDepth: 3)
+          timeToRead
+          excerpt
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('failed to create posts ', result.errors);
+  }
+  const pages = result.data.allMdx.nodes;
+
+  pages.forEach((page) => {
+    const {
+      frontmatter: { redirect_from, title, path: pagePath, locale },
+      tableOfContents,
+      timeToRead,
+      excerpt,
+      id,
+    } = page;
+
+    // Create all redirects that are defined in frontmatter
+    if (redirect_from) {
+      if (Array.isArray(redirect_from)) {
+        redirect_from.forEach((redirect) => {
+          createRedirect({
+            fromPath: redirect,
+            toPath: page.frontmatter.path,
+            redirectInBrowser: true,
+            isPermanent: true,
+          });
+        });
+      }
+    }
+
+    actions.createPage({
+      path: pagePath,
+      component: path.resolve(`./src/templates/DocsPageTemplate.tsx`),
+
+      context: { id, locale, path: pagePath, title, tableOfContents, timeToRead, excerpt },
+    });
+  });
+};

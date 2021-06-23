@@ -36,6 +36,29 @@ module.exports = {
         icon: `src/assets/branding/icon.svg`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/docs`,
+      },
+    },
+    // {
+    //   resolve: 'gatsby-transformer-mdx',
+    //   options: {
+    //     defaultLayout: `${__dirname}/src/templates/DocsPageTemplate`,
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/templates/DocsPageTemplate.tsx'),
+        },
+      },
+    },
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-meta-redirect`,
     ...prodPlugins,
   ],
 };
