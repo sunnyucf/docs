@@ -6,6 +6,9 @@
 
 const path = require('path');
 
+/**
+ * Customise webpack config.
+ */
 exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
   actions.setWebpackConfig({
     module: {
@@ -28,6 +31,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
         '@assets': path.resolve(__dirname, 'src/assets'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
         '@atoms': path.resolve(__dirname, 'src/atoms'),
+        '@css': path.resolve(__dirname, 'src/css'),
       },
     },
   });

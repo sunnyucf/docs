@@ -11,7 +11,9 @@
       "@assets/*": ["assets/*"],
       "@hooks/*": ["hooks/*"],
       "@locales": ["locales/index.ts"],
-      "@atoms": ["atoms/index.ts"]
+      "@atoms": ["atoms/index.ts"],
+      "@types/*": ["../@types/*", "../node_modules/@types/*"],
+      "@css/*": ["css/*"],
     }
   }
 }
