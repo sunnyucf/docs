@@ -10,8 +10,10 @@ import SEO from '@components/SEO';
 import { MdxLinkInterop } from '@components/Link';
 import { MdxHeadingInterop } from '@components/Typography';
 import { TableOfContents } from '@components/TableOfContents';
+import { DocsPageInfo } from '@components/DocsPageInfo';
 
 import '@css/docs-page.less';
+import { Footer } from '@components/Footer';
 
 const MdxShortcodes: MDXProviderComponentsProp = {
   a: MdxLinkInterop,
@@ -22,14 +24,20 @@ const MdxShortcodes: MDXProviderComponentsProp = {
   h5: MdxHeadingInterop('h5'),
   h6: MdxHeadingInterop('h6'),
   TableOfContents,
-  DocsPageInfo: (props) => {
-    console.log(props);
-    return null;
-  },
+  DocsPageInfo,
 };
 
 const useStyles = makeStyles({
   main: {
+    maxWidth: 740,
+    margin: 'auto',
+    padding: 16,
+  },
+  footer: {
+    marginTop: 24,
+    borderTop: `1px solid var(--faint-grey)`,
+  },
+  footerInner: {
     maxWidth: 740,
     margin: 'auto',
     padding: 16,
@@ -85,18 +93,18 @@ export default function DocsPageTemplate({ pageContext, location }: IDocsPageTem
   const { body: _, ...contextNoBody } = pageContext;
 
   return (
-    <Layout location={location}>
+    <Layout location={location} noFooter>
       <SEO title={pageContext.frontmatter.title} description={pageContext.excerpt} />
 
       <main className={classes.main}>
-        <nav></nav>
-
         <article className="docs-article">
           <MDXProvider components={MdxShortcodes}>
             <MDXRenderer pageContext={contextNoBody}>{pageContext.body}</MDXRenderer>
           </MDXProvider>
         </article>
       </main>
+
+      <Footer className={classes.footer} innerClassName={classes.footerInner} />
     </Layout>
   );
 }
