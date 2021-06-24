@@ -1,30 +1,33 @@
 import * as React from 'react';
-import { Footer } from './Footer';
+
+import type { LocationContext } from '@gatsbyjs/reach-router';
+import { ScrollContext } from 'gatsby-react-router-scroll';
+import { RecoilRoot } from 'recoil';
 
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 interface ILayoutProps {
   children: React.ReactNode;
+  /**
+   * Removes the footer.
+   *
+   * **Should only be used if the footer is reinserted within the child element hierachy.**
+   */
+  noFooter: boolean;
+  location: LocationContext;
 }
 
-export default function Layout({ children }: ILayoutProps) {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
-
+export default function Layout({ children, noFooter = false, location }: ILayoutProps) {
   return (
-    <>
-      <Header />
+    <ScrollContext location={location}>
+      <RecoilRoot>
+        <Header />
 
-      {children}
+        {children}
 
-      <Footer />
-    </>
+        {!noFooter && <Footer />}
+      </RecoilRoot>
+    </ScrollContext>
   );
 }
