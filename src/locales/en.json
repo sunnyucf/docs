@@ -32,6 +32,11 @@
       "tableOfContents": {
         "heading": "Table of Contents"
       }
+    },
+    "docsPageInfo": {
+      "lastModified": {
+        "dayjsTemplate": "[Last updated] LLL"
+      }
     }
   }
 }
