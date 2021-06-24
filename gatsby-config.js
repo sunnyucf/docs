@@ -55,6 +55,14 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/templates/DocsPageTemplate.tsx'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `docs-heading-link`,
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-catch-links`,
