@@ -67,6 +67,14 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-meta-redirect`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     ...prodPlugins,
   ],
 };
