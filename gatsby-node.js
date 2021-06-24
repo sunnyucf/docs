@@ -32,6 +32,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
         '@hooks': path.resolve(__dirname, 'src/hooks'),
         '@atoms': path.resolve(__dirname, 'src/atoms'),
         '@css': path.resolve(__dirname, 'src/css'),
+        '@templates': path.resolve(__dirname, 'src/templates'),
       },
     },
   });
@@ -47,13 +48,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     {
       allMdx {
         nodes {
-          id
           frontmatter {
             title
             path
             redirect_from
             locale
           }
+
+          parent {
+            ... on File {
+              modifiedTime
+            }
+          }
+
+          id
+          body
           tableOfContents(maxDepth: 3)
           timeToRead
           excerpt
@@ -69,17 +78,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   pages.forEach((page) => {
     const {
-      frontmatter: { redirect_from, title, path: pagePath, locale },
+      frontmatter,
+      parent: { modifiedTime },
       tableOfContents,
       timeToRead,
       excerpt,
       id,
+      body,
     } = page;
 
     // Create all redirects that are defined in frontmatter
-    if (redirect_from) {
-      if (Array.isArray(redirect_from)) {
-        redirect_from.forEach((redirect) => {
+    if (frontmatter.redirect_from) {
+      if (Array.isArray(frontmatter.redirect_from)) {
+        frontmatter.redirect_from.forEach((redirect) => {
           createRedirect({
             fromPath: redirect,
             toPath: page.frontmatter.path,
@@ -87,14 +98,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             isPermanent: true,
           });
         });
+      } else {
+        throw '`redirect_from` in MDX frontmatter must either be an array of paths, or not defined';
       }
     }
 
     actions.createPage({
-      path: pagePath,
+      path: frontmatter.path,
       component: path.resolve(`./src/templates/DocsPageTemplate.tsx`),
 
-      context: { id, locale, path: pagePath, title, tableOfContents, timeToRead, excerpt },
+      context: { id, tableOfContents, timeToRead, excerpt, lastModified: new Date(modifiedTime), body, frontmatter },
     });
   });
 };
