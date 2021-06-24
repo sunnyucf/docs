@@ -27,6 +27,11 @@
           "groupTitle": "Languages"
         }
       }
+    },
+    "docsTemplate": {
+      "tableOfContents": {
+        "heading": "Table of Contents"
+      }
     }
   }
 }
