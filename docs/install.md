@@ -25,7 +25,7 @@ This doesn't necessarily mean you need a VPS. Most decent hosts support SSH acce
 
 ## Installing
 
-Flarum uses [Composer](https://getcomposer.org) to manage its dependencies and extensions. If you're not familiar with it, read [our guide](composer.md) for information on what it is and how to set it up. Afterwards, run this command in an empty location that you want Flarum to be installed in:
+Flarum uses [Composer](https://ogili.org) to manage its dependencies and extensions. If you're not familiar with it, read [our guide](composer.md) for information on what it is and how to set it up. Afterwards, run this command in an empty location that you want Flarum to be installed in:
 
 ```bash
 composer create-project flarum/flarum .
